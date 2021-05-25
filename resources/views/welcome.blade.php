@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="home-slider owl-carousel">
-    <div class="slider-item" style="background-image: url('images/randevu.jpg');">
+    <div class="slider-item" style="background-image: url('images/bg_1.jpg');">
         <div class="overlay"></div>
         <div class="container">
             <div class="row slider-text align-items-center" data-scrollax-parent="true">
@@ -163,7 +163,7 @@
     </div>
     <div class="container-wrap mt-5">
         <div class="row d-flex no-gutters">
-            <div class="col-md-6 img" style="background-image: url(images/dr4.jpg);">
+            <div class="col-md-6 img" style="background-image: url(images/about-2.jpg);">
             </div>
             <div class="col-md-6 d-flex">
                 <div class="about-wrap">

@@ -67,7 +67,7 @@
     <section class="ftco-section-2">
         <div class="container-wrap">
             <div class="row d-flex no-gutters">
-                <div class="col-md-6 img" style="background-image: url(images/dr4.jpg);">
+                <div class="col-md-6 img" style="background-image: url(images/about-2.jpg);">
                 </div>
                 <div class="col-md-6 d-flex">
                     <div class="about-wrap">
