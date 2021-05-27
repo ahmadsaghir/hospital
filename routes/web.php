@@ -58,3 +58,13 @@ Route::put('/otomasyon/doktorlar/{unvan}', 'DoktorController@update');
 Route::get('/otomasyon/doktorlar/{unvan}/delete', 'DoktorController@destroy')->name('doktor.delete');
 Route::get('/otomasyon/doktorlar/search/', 'DoktorController@search')->name('doktor.search');
 
+/*poliklinikler*/
+Route::get('/otomasyon/poliklinikler/create', 'PoliklinikController@create');
+Route::post('/otomasyon/poliklinikler', 'PoliklinikController@store');
+Route::get('/otomasyon/poliklinikler', 'PoliklinikController@index')->name('poliklinik.index');
+Route::get('/otomasyon/poliklinikler/{poliklinik}', 'PoliklinikController@show')->name('poliklinik.show');
+Route::get('/otomasyon/poliklinikler/{poliklinik}/edit', 'PoliklinikController@edit');
+Route::put('/otomasyon/poliklinikler/{poliklinik}', 'PoliklinikController@update');
+Route::get('/otomasyon/poliklinikler/{poliklinik}/delete', 'PoliklinikController@destroy')->name('poliklinik.delete');
+Route::get('/otomasyon/poliklinikler/search/', 'PoliklinikController@search')->name('poliklinik.search');
+

@@ -8186,7 +8186,7 @@ h1, h2, h3, h4, h5,
 .form-control {
   height: 52px !important;
   background: #fff !important;
-  color: #000 !important;
+  color: #808080 !important;
   font-size: 16px;
   border-radius: 0px;
   padding-right: 0;
@@ -8896,7 +8896,7 @@ textarea.form-control {
 
 .block-27 ul {
   padding: 0;
-  margin: -100 0 25px 550px;
+  margin: -100px 0 25px 700px;
    }
   .block-27 ul li {
     display: inline-block;

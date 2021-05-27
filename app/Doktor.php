@@ -12,4 +12,8 @@ class Doktor extends Model
     {
         return route('doktor.show', $this);
     }
+    public function poliklinik()
+    {
+        return $this->hasOne(Poliklinik::class,'doktorID');
+    }
 }

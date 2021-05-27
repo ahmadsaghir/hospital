@@ -9,7 +9,7 @@
                     <div class="col-md-7 col-sm-12 ftco-animate mb-5">
                         <p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span class="mr-2"><a href="/">Ana Sayfa</a></span> <span>Otomasyon</span></p>
                         <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Otomasyon</h1>
-                        <p class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Bu sayfada Tüm Tabloları Göstermektedir.</p>
+                        <p class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Bu sayfada Tüm Dosyaları Göstermektedir.</p>
                     </div>
                 </div>
             </div>
@@ -45,6 +45,14 @@
                             <p><span class="price">Doktorlar</span></p>
                         </div>
                         <p class="button text-center"><a href="/otomasyon/doktorlar" class="btn btn-primary btn-outline-primary px-4 py-3">Görüntele</a></p>
+                    </div>
+                </div>
+                <div class="col-md-3 ftco-animate">
+                    <div class="pricing-entry pb-5 text-center">
+                        <div>
+                            <p><span class="price">Poliklinikler</span></p>
+                        </div>
+                        <p class="button text-center"><a href="/otomasyon/poliklinikler" class="btn btn-primary btn-outline-primary px-4 py-3">Görüntele</a></p>
                     </div>
                 </div>
             </div>
