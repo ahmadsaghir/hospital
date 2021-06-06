@@ -25,14 +25,14 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="poliklinikAd" placeholder="Poliklinik Adı">
+                                    <input type="text" class="form-control" name="poliklinikAd" value="{{$poliklinik->poliklinikAd}}" placeholder="Poliklinik Adı">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <div class="select-wrap">
                                         <select name="doktorID" id="doktorID" class="form-control">
-                                            <option value="">Doktor</option>
+                                            <option value="{{$poliklinik->doktor->id}}">{{$poliklinik->doktor->doktorAd}}</option>
                                             @foreach($doktorlar ?? '' as $doktor)
                                                 <option value="{{$doktor->id}}">{{$doktor->doktorAd}}</option>
                                             @endforeach
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Oluştur" class="btn btn-primary py-3 px-5">
+                            <input type="submit" value="Güncelle" class="btn btn-primary py-3 px-5">
                         </div>
                     </form>
                 </div>

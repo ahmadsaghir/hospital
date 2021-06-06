@@ -36,6 +36,7 @@ class KurumController extends Controller
     }
     public function update(Kurum $kurum)
     {
+
         $kurum->update($this->validateKurum());
         return redirect($kurum->path());
     }

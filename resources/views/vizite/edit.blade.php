@@ -25,8 +25,8 @@
                             <div class="col-md-6">
                                 <div class="form-group" >
                                     <div class="select-wrap">
-                                        <select name="hastaID" id="hastaID" class="form-control">
-                                            <option value="">Hasta</option>
+                                        <select name="hastaID" class="form-control">
+                                            <option value="{{$vizite->hasta->id}}">{{$vizite->hasta->hastaAd}}</option>
                                             @foreach($hastalar ?? '' as $hasta)
                                                 <option value="{{$hasta->id}}">{{$hasta->hastaAd}}</option>
                                             @endforeach
@@ -38,7 +38,7 @@
                                 <div class="form-group" >
                                     <div class="select-wrap">
                                         <select name="poliklinikID" id="poliklinikID" class="form-control">
-                                            <option value="">Poliklinik</option>
+                                            <option value="{{$vizite->poliklinik->id}}">{{$vizite->poliklinik->poliklinikAd}}</option>
                                             @foreach($poliklinikler ?? '' as $poliklinik)
                                                 <option value="{{$poliklinik->id}}">{{$poliklinik->poliklinikAd}}</option>
                                             @endforeach
@@ -50,17 +50,17 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="text" class="form-control appointment_date" name="viziteTarihi" id="viziteTarihi" placeholder="Vizite Tarihi">
+                                    <input type="text" class="form-control appointment_date" name="viziteTarihi" value="{{$vizite->viziteTarihi}}" placeholder="Vizite Tarihi">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="text" class="form-control appointment_time" name="baslamaZamani" id="baslamaZamani" placeholder="Vizite Başlama Zamanı">
+                                    <input type="text" class="form-control appointment_time" name="baslamaZamani" value="{{$vizite->baslamaZamani}}" placeholder="Vizite Başlama Zamanı">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="text" class="form-control appointment_time" name="bitisZamani" id="bitisZamani" placeholder="Vizite Bitiş Zamanı">
+                                    <input type="text" class="form-control appointment_time" name="bitisZamani" value="{{$vizite->bitisZamani}}" placeholder="Vizite Bitiş Zamanı">
                                 </div>
                             </div>
                         </div>

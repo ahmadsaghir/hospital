@@ -24,7 +24,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="unvanAd" id="unvanAd" placeholder="Unvan Ad">
+                                    <input type="text" class="form-control" name="unvanAd" value="{{$unvan->unvanAd}}" placeholder="Unvan Ad">
                                 </div>
                             </div>
                         </div>

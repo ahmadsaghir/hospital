@@ -24,19 +24,19 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="doktorAd" id="doktorAd" placeholder="Doktor Adı">
+                                    <input type="text" class="form-control" name="doktorAd" value="{{$doktor->doktorAd}}" placeholder="Doktor Adı">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="doktorSad" id="doktorSad" placeholder="Doktor Soyadı">
+                                    <input type="text" class="form-control" name="doktorSad" value="{{$doktor->doktorSad}}" placeholder="Doktor Soyadı">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <div class="select-wrap">
-                                        <select name="unvanID" id="unvanID" class="form-control">
-                                            <option value="">Unvan</option>
+                                        <select name="unvanID" class="form-control">
+                                            <option value="{{$doktor->unvan->id}}">{{$doktor->unvan->unvanAd}}</option>
                                             @foreach($unvanlar ?? '' as $unvan)
                                                 <option value="{{$unvan->id}}">{{$unvan->unvanAd}}</option>
                                             @endforeach
@@ -48,23 +48,23 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="doktorTc" id="doktorTc" placeholder="Doktor TC Kimlik No">                                </div>
+                                    <input type="text" class="form-control" name="doktorTc" value="{{$doktor->doktorTc}}" placeholder="Doktor TC Kimlik No">                                </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" name="doktorTel" id="doktorTel" placeholder="Telefon">
+                                    <input type="tel" class="form-control" name="doktorTel" value="{{$doktor->doktorTel}}" placeholder="Telefon">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+                                    <input type="text" class="form-control" name="email" value="{{$doktor->email}}" placeholder="Email">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="doktorAdres" id="doktorAdres" placeholder="Adres">
+                                    <input type="text" class="form-control" name="doktorAdres" value="{{$doktor->doktorAdres}}" placeholder="Adres">
                                 </div>
                             </div>
                         </div>

@@ -24,7 +24,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="hastaTipiAd" id="hastaTipiAd" placeholder="Hasta Tipi Ad">
+                                    <input type="text" class="form-control" name="hastaTipiAd" value="{{$hastaTipi->hastaTipiAd}}" placeholder="Hasta Tipi Ad">
                                 </div>
                             </div>
                         </div>

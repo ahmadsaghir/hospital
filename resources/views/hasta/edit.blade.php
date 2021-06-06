@@ -24,22 +24,24 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="hastaTC" id="hastaTC" placeholder="Hasta TC Kimlik No">                                </div>
+                                    <input type="text" class="form-control" name="hastaTC" value="{{$hasta->hastaTC}}" placeholder="Hasta TC Kimlik No">
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" name="hastaTel" id="hastaTel" placeholder="Telefon">
+                                    <input type="tel" class="form-control" name="hastaTel" value="{{$hasta->hastaTel}}" placeholder="Telefon">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="hastaAd" id="hastaAd" placeholder="Hasta Adı">                                </div>
+                                    <input type="text" class="form-control" name="hastaAd" value="{{$hasta->hastaAd}}" placeholder="Hasta Adı">
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="hastaSad" id="hastaSad" placeholder="Hasta Soyadı">
+                                    <input type="text" class="form-control" name="hastaSad" value="{{$hasta->hastaSad}}" placeholder="Hasta Soyadı">
                                 </div>
                             </div>
                         </div>
@@ -47,40 +49,23 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="select-wrap">
-                                        <select name="kurumID" id="kurumID" class="form-control">
-                                            <option value="">Kurum</option>
+                                        <select name="kurumID" class="form-control">
+                                            <option value="{{$hasta->kurum->id}}">{{$hasta->kurum->kurumAd}}</option>
                                             @foreach($kurumlar ?? '' as $kurum)
                                                 <option value="{{$kurum->id}}">{{$kurum->kurumAd}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="select-wrap">
-                                            <select name="hastaTipiID" id="hastaTipiID" class="form-control">
-                                                <option value="">Hasta Tipi</option>
-                                                @foreach($hastaTipleri ?? '' as $hastaTipi)
-                                                    <option value="{{$hastaTipi->id}}">{{$hastaTipi->hastaTipiAd}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control appointment_date" name="dogumTarihi" id="dogumTarihi" placeholder="Tarih">
-                                </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="select-wrap">
-                                        <select name="dogumYeri" id="dogumYeri" class="form-control">
-                                            <option value="">Doğum Yeri</option>
-                                            <option value="Halep">Halep</option>
+                                        <select name="hastaTipiID" class="form-control">
+                                            <option value="{{$hasta->hastaTipi->id}}">{{$hasta->hastaTipi->hastaTipiAd}}</option>
+                                            @foreach($hastaTipleri ?? '' as $hastaTipi)
+                                                <option value="{{$hastaTipi->id}}">{{$hastaTipi->hastaTipiAd}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -89,9 +74,23 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <input type="text" class="form-control appointment_date" name="dogumTarihi" value="{{$hasta->dogumTarihi}}" placeholder="Tarih">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
                                     <div class="select-wrap">
-                                        <select name="cinsiyet" id="cinsiyet" class="form-control">
-                                            <option value="">Cinsiyet</option>
+                                        <input type="text" class="form-control" name="dogumYeri" value="{{$hasta->dogumYeri}}" placeholder="Doğum Yeri">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="select-wrap">
+                                        <select name="cinsiyet" class="form-control">
+                                            <option value="{{$hasta->cinsiyet}}">{{$hasta->cinsiyet}}</option>
                                             <option value="Erkek">Erkek</option>
                                             <option value="Kız">Kız</option>
                                         </select>
@@ -101,8 +100,8 @@
                             <div class="col-md-6">
                                 <div class="form-group" >
                                     <div class="select-wrap">
-                                        <select name="medeniHal" id="medeniHal" class="form-control">
-                                            <option value="">Medeni Hal</option>
+                                        <select name="medeniHal" class="form-control">
+                                            <option value="{{$hasta->medeniHal}}">{{$hasta->medeniHal}}</option>
                                             <option value="Bekar">Bekar</option>
                                             <option value="Evli">Evli</option>
                                         </select>
@@ -113,7 +112,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="adres" id="adres" placeholder="Adres">
+                                    <input type="text" class="form-control" name="adres" value="{{$hasta->adres}}" placeholder="Adres">
                                 </div>
                             </div>
                         </div>

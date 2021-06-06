@@ -24,13 +24,13 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="kurumAd" id="kurumAd" placeholder="kurum Ad">
+                                    <input type="text" class="form-control" name="kurumAd" value="{{$kurum->kurumAd}}" placeholder="kurum Ad">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group" >
                                     <div class="select-wrap">
-                                        <select name="aktif" id="" class="form-control">
+                                        <select name="aktif" class="form-control">
                                             <option value="">Aktif</option>
                                             <option value="Evet">Evet</option>
                                             <option value="Hayir">Hayir</option>
