@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRandevusTable extends Migration
+class CreateKurumsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateRandevusTable extends Migration
      */
     public function up()
     {
-        Schema::create('randevus', function (Blueprint $table) {
-            $table->bigIncrements('randevuID');
-            $table->bigInteger('hastaID');
-            $table->bigInteger('doktorID');
-            $table->bigInteger('poliklinikID');
-            $table->date('randevuTarihi');
+        Schema::create('kurums', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('kurumAd');
+            $table->string('aktif');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateRandevusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('randevus');
+        Schema::dropIfExists('kurums');
     }
 }

@@ -2,58 +2,55 @@
 
 @section('content')
     <section class="home-slider owl-carousel">
-        <div class="slider-item bread-item" style="background-image:  url({{url('images/bg_1.jpg')}});" data-stellar-background-ratio="0.5">
+        <div  class="slider-item bread-item" style="background-image: url({{url('images/bg_1.jpg')}});" data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="container" data-scrollax-parent="true">
                 <div class="row slider-text align-items-end">
                     <div class="col-md-7 col-sm-12 ftco-animate mb-5">
-                        <p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span class="mr-2"><a href="/otomasyon/unvanlar">Unvanlar</a></span> <span>{{$unvan->unvanAd}}</span></p>
-                        <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">{{$unvan->unvanAd}}</h1>
+                        <p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span class="mr-2"><a href="/otomasyon">Otomasyon</a></span> <span>Unvan</span></p>
+                        <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Unvan'a Göre Doktorlar</h1>
+                        <p class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Bu Sayfada Unvana Göre Doktorların Dosyasını Ön Görüntüleyebilirsiniz.</p>
+                        <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="/otomasyon/doktorlar/create" class="btn btn-primary px-4 py-3">Yeni Doktor Ekle</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <section class="ftco-section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="row">
-                        <div class="col-md-12 ftco-animate">
-                            <div class="blog-entry">
-                                <div class="text d-flex py-4">
-                                    <div class="meta mb-3">
-                                        <div><a>Sep. 20, 2018</a></div>
-                                        <div><a href="#">Admin</a></div>
-                                        <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                                    </div>
-                                    <div class="desc pl-sm-3 pl-md-5">
-                                        <h3 class="heading">{{$unvan->unvanAd}}</h3>
-                                        <div class="row">
-                                            <div class="col-2">
-                                                <p><a href=/otomasyon/unvanlar/{{$unvan->id}}/edit class="btn btn-primary btn-outline-primary">Düzenle</a></p>
-                                            </div>
-                                            <div class="col-2">
-                                                <p><a href="{{route('unvan.delete',$unvan->id)}}" class="btn btn-primary btn-outline-primary">Sil</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- END: col-md-8 -->
-                <div class="col-md-4 sidebar ftco-animate">
-                    <div class="sidebar-box">
+            <div class="row justify-content-center mb-5 pb-5">
+                <div class="col-md-7 text-center heading-section ftco-animate">
+                    <h2 class="mb-3">Unvan'a Göre Doktorlar</h2>
+                </div>
+                <div class="offset-8 col-md-4 sidebar ftco-animate">
+                    <div class="sidebar-box indexsearch">
                         <form method="GET" action="{{ route('unvan.search') }}" class="search-form">
                             <div class="form-group">
                                 <span class="icon fa fa-search"></span>
-                                <input type="text" name="search" class="form-control" placeholder="nvan Ara">
+                                <input type="text" name="search" class="form-control" placeholder="Unvan Ara">
                             </div>
                         </form>
                     </div>
                 </div>
+            </div>
+            <div class="row">
+                @foreach($doktorlar as $doktor)
+                    <div class="col-md-3 ftco-animate">
+                        <div class="pricing-entry pb-5 text-center">
+                            <div>
+                                <p><span class="price">{{$doktor->doktorID}}</span></p>
+                                <h3 class="mb-4">{{$doktor->doktorAd}} {{$doktor->doktorSad}}</h3>
+                            </div>
+                            <ul>
+                                <li>{{$doktor->unvan->unvanAd}}</li>
+                                <li>{{$doktor->doktorTc}}</li>
+                                <li>{{$doktor->doktorTel}}</li>
+                                <li>{{$doktor->email}}</li>
+                            </ul>
+                            <p class="button text-center"><a href="/otomasyon/doktorlar/{{$doktor->id}}" class="btn btn-primary btn-outline-primary px-4 py-3">Görüntele</a></p>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>

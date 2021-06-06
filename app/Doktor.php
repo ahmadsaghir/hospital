@@ -16,4 +16,8 @@ class Doktor extends Model
     {
         return $this->hasOne(Poliklinik::class,'doktorID');
     }
+    public function unvan()
+    {
+        return $this->belongsTo(Unvan::class,'unvanID');
+    }
 }

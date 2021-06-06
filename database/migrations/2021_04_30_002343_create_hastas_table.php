@@ -15,11 +15,13 @@ class CreateHastasTable extends Migration
     {
         Schema::create('hastas', function (Blueprint $table) {
             $table->bigIncrements("id");
+            $table->unsignedBigInteger('kurumID');
+            $table->unsignedBigInteger('hastaTipiID');
             $table->bigInteger("hastaTC")->unique();
             $table->bigInteger("hastaTel");
             $table->string("hastaAd");
             $table->string("hastaSad");
-            $table->text("dogumTarihi");
+            $table->string("dogumTarihi");
             $table->string("dogumYeri");
             $table->string("cinsiyet");
             $table->string("medeniHal");

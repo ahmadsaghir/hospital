@@ -12,4 +12,8 @@ class Unvan extends Model
     {
         return route('unvan.show', $this);
     }
+    public function doktor()
+    {
+        return $this->hasOne(Doktor::class,'unvanID');
+    }
 }

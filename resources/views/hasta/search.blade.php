@@ -22,6 +22,16 @@
                 <div class="col-md-7 text-center heading-section ftco-animate">
                     <h2 class="mb-3">Hastalar</h2>
                 </div>
+                <div class="offset-8 col-md-4 sidebar ftco-animate">
+                    <div class="sidebar-box indexsearch">
+                        <form method="GET" action="{{ route('hasta.search') }}" class="search-form">
+                            <div class="form-group">
+                                <span class="icon fa fa-search"></span>
+                                <input type="text" name="search" class="form-control" placeholder="Hasta Ara">
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
             <div class="row">
                 @if($hastalar->isNotEmpty())
@@ -29,7 +39,7 @@
                     <div class="col-md-3 ftco-animate">
                         <div class="pricing-entry pb-5 text-center">
                             <div>
-                                <p><span class="price">{{$hasta->hastaID}}</span></p>
+                                <p><span class="price">{{$hasta->id}}</span></p>
                                 <h3 class="mb-4">{{$hasta->hastaAd}} {{$hasta->hastaSad}}</h3>
                             </div>
                             <ul>

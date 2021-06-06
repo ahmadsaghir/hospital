@@ -7,8 +7,8 @@
             <div class="container" data-scrollax-parent="true">
                 <div class="row slider-text align-items-end">
                     <div class="col-md-7 col-sm-12 ftco-animate mb-5">
-                        <p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span class="mr-2"><a href="/otomasyon/doktorlar">doktorlar</a></span> <span>doktor Güncelle</span></p>
-                        <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">doktor Güncelle</h1>
+                        <p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span class="mr-2"><a href="/otomasyon/doktorlar">Doktorlar</a></span> <span>Doktor Güncelle</span></p>
+                        <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Doktor Güncelle</h1>
                     </div>
                 </div>
             </div>
@@ -22,9 +22,33 @@
                         @csrf
                         @method('PUT')
                         <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="doktorAd" id="doktorAd" placeholder="Doktor Adı">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="doktorSad" id="doktorSad" placeholder="Doktor Soyadı">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <div class="select-wrap">
+                                        <select name="unvanID" id="unvanID" class="form-control">
+                                            <option value="">Unvan</option>
+                                            @foreach($unvanlar ?? '' as $unvan)
+                                                <option value="{{$unvan->id}}">{{$unvan->unvanAd}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="doktorTc" id="doktorTc" placeholder="doktor TC Kimlik No">                                </div>
+                                    <input type="text" class="form-control" name="doktorTc" id="doktorTc" placeholder="Doktor TC Kimlik No">                                </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -35,23 +59,10 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="doktorAd" id="doktorAd" placeholder="doktor Adı">                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="doktorSad" id="doktorSad" placeholder="doktor Soyadı">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
                                     <input type="text" class="form-control" name="email" id="email" placeholder="Email">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="doktorAdres" id="doktorAdres" placeholder="Adres">
                                 </div>

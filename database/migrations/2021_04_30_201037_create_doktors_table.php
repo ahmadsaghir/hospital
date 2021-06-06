@@ -15,6 +15,7 @@ class CreateDoktorsTable extends Migration
     {
         Schema::create('doktors', function (Blueprint $table) {
             $table->bigIncrements("id");
+            $table->unsignedBigInteger('unvanID');
             $table->bigInteger("doktorTc")->unique();
             $table->bigInteger("doktorTel");
             $table->string("doktorAd");
@@ -22,6 +23,8 @@ class CreateDoktorsTable extends Migration
             $table->text("doktorAdres");
             $table->text("email");
             $table->timestamps();
+
+
         });
     }
 

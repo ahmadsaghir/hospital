@@ -1,6 +1,5 @@
 <?php
 
-use App\Hasta;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +26,7 @@ Route::get('/otomasyon/randevular/{randevu}', 'RandevuController@show')->name('r
 Route::get('/otomasyon/randevular/{randevu}/edit', 'RandevuController@edit');
 Route::put('/otomasyon/randevular/{randevu}', 'RandevuController@update');
 Route::get('/otomasyon/randevular/{randevu}/delete', 'RandevuController@destroy')->name('randevu.delete');
+Route::get('/randevular/search/', 'RandevuController@search')->name('randevu.search');
 
 /*hastalar*/
 Route::get('/otomasyon/hastalar/create', 'HastaController@create');
@@ -36,7 +36,7 @@ Route::get('/otomasyon/hastalar/{hasta}', 'HastaController@show')->name('hasta.s
 Route::get('/otomasyon/hastalar/{hasta}/edit', 'HastaController@edit');
 Route::put('/otomasyon/hastalar/{hasta}', 'HastaController@update');
 Route::get('/otomasyon/hastalar/{hasta}/delete', 'HastaController@destroy')->name('hasta.delete');
-Route::get('/search/', 'HastaController@search')->name('hasta.search');
+Route::get('/hastalar/search/', 'HastaController@search')->name('hasta.search');
 
 /*unvanlar*/
 Route::get('/otomasyon/unvanlar/create', 'UnvanController@create');
@@ -46,17 +46,17 @@ Route::get('/otomasyon/unvanlar/{unvan}', 'UnvanController@show')->name('unvan.s
 Route::get('/otomasyon/unvanlar/{unvan}/edit', 'UnvanController@edit');
 Route::put('/otomasyon/unvanlar/{unvan}', 'UnvanController@update');
 Route::get('/otomasyon/unvanlar/{unvan}/delete', 'UnvanController@destroy')->name('unvan.delete');
-Route::get('/otomasyon/unvanlar/search/', 'UnvanController@search')->name('unvan.search');
+Route::get('/unvanlar/search/', 'UnvanController@search')->name('unvan.search');
 
 /*doktorlar*/
 Route::get('/otomasyon/doktorlar/create', 'DoktorController@create');
 Route::post('/otomasyon/doktorlar', 'DoktorController@store');
 Route::get('/otomasyon/doktorlar', 'DoktorController@index')->name('doktor.index');
-Route::get('/otomasyon/doktorlar/{unvan}', 'DoktorController@show')->name('doktor.show');
-Route::get('/otomasyon/doktorlar/{unvan}/edit', 'DoktorController@edit');
-Route::put('/otomasyon/doktorlar/{unvan}', 'DoktorController@update');
-Route::get('/otomasyon/doktorlar/{unvan}/delete', 'DoktorController@destroy')->name('doktor.delete');
-Route::get('/otomasyon/doktorlar/search/', 'DoktorController@search')->name('doktor.search');
+Route::get('/otomasyon/doktorlar/{doktor}', 'DoktorController@show')->name('doktor.show');
+Route::get('/otomasyon/doktorlar/{doktor}/edit', 'DoktorController@edit');
+Route::put('/otomasyon/doktorlar/{doktor}', 'DoktorController@update');
+Route::get('/otomasyon/doktorlar/{doktor}/delete', 'DoktorController@destroy')->name('doktor.delete');
+Route::get('/doktorlar/search/', 'DoktorController@search')->name('doktor.search');
 
 /*poliklinikler*/
 Route::get('/otomasyon/poliklinikler/create', 'PoliklinikController@create');
@@ -66,5 +66,34 @@ Route::get('/otomasyon/poliklinikler/{poliklinik}', 'PoliklinikController@show')
 Route::get('/otomasyon/poliklinikler/{poliklinik}/edit', 'PoliklinikController@edit');
 Route::put('/otomasyon/poliklinikler/{poliklinik}', 'PoliklinikController@update');
 Route::get('/otomasyon/poliklinikler/{poliklinik}/delete', 'PoliklinikController@destroy')->name('poliklinik.delete');
-Route::get('/otomasyon/poliklinikler/search/', 'PoliklinikController@search')->name('poliklinik.search');
+Route::get('/poliklinikler/search/', 'PoliklinikController@search')->name('poliklinik.search');
 
+/*viziteler*/
+Route::get('/otomasyon/viziteler/create', 'ViziteController@create');
+Route::post('/otomasyon/viziteler', 'ViziteController@store');
+Route::get('/otomasyon/viziteler', 'ViziteController@index')->name('vizite.index');
+Route::get('/otomasyon/viziteler/{vizite}', 'ViziteController@show')->name('vizite.show');
+Route::get('/otomasyon/viziteler/{vizite}/edit', 'ViziteController@edit');
+Route::put('/otomasyon/viziteler/{vizite}', 'ViziteController@update');
+Route::get('/otomasyon/viziteler/{vizite}/delete', 'ViziteController@destroy')->name('vizite.delete');
+Route::get('/viziteler/search/', 'ViziteController@search')->name('vizite.search');
+
+/*kurumlar*/
+Route::get('/otomasyon/kurumlar/create', 'KurumController@create');
+Route::post('/otomasyon/kurumlar', 'KurumController@store');
+Route::get('/otomasyon/kurumlar', 'KurumController@index')->name('kurum.index');
+Route::get('/otomasyon/kurumlar/{kurum}', 'KurumController@show')->name('kurum.show');
+Route::get('/otomasyon/kurumlar/{kurum}/edit', 'KurumController@edit');
+Route::put('/otomasyon/kurumlar/{kurum}', 'KurumController@update');
+Route::get('/otomasyon/kurumlar/{kurum}/delete', 'KurumController@destroy')->name('kurum.delete');
+Route::get('/kurumlar/search/', 'KurumController@search')->name('kurum.search');
+
+/*hastaTipleri*/
+Route::get('/otomasyon/hastaTipleri/create', 'hastaTipiController@create');
+Route::post('/otomasyon/hastaTipleri', 'hastaTipiController@store');
+Route::get('/otomasyon/hastaTipleri', 'hastaTipiController@index')->name('hastaTipi.index');
+Route::get('/otomasyon/hastaTipleri/{hastaTipi}', 'hastaTipiController@show')->name('hastaTipi.show');
+Route::get('/otomasyon/hastaTipleri/{hastaTipi}/edit', 'hastaTipiController@edit');
+Route::put('/otomasyon/hastaTipleri/{hastaTipi}', 'hastaTipiController@update');
+Route::get('/otomasyon/hastaTipleri/{hastaTipi}/delete', 'hastaTipiController@destroy')->name('hastaTipi.delete');
+Route::get('/hastaTipleri/search/', 'hastaTipiController@search')->name('hastaTipi.search');

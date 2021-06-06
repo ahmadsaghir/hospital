@@ -30,6 +30,8 @@
                                     </div>
                                     <div class="desc pl-sm-3 pl-md-5">
                                         <h3 class="heading">{{$hasta->hastaAd}} {{$hasta->hastaSad}}</h3>
+                                        <p>Hasta Tipi : {{$hasta->hastaTipi->hastaTipiAd}}</p>
+                                        <p>Kurum : {{$hasta->kurum->kurumAd}}</p>
                                         <p>TC Kimlik No : {{$hasta->hastaTC}}</p>
                                         <p>Telefon : {{$hasta->hastaTel}}</p>
                                         <p>Doğum Tarihi : {{$hasta->dogumTarihi}}</p>

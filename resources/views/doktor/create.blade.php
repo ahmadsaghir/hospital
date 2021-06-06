@@ -21,10 +21,33 @@
                     <form class="form-contact contact_form" method="POST" action="{{route('doktor.index')}}" id="contactForm" novalidate="novalidate">
                         @csrf
                         <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="doktorAd" id="doktorAd" placeholder="Doktor Adı">                                </div>
+                                </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="doktorSad" id="doktorSad" placeholder="Doktor Soyadı">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <div class="select-wrap">
+                                        <select name="unvanID" id="unvanID" class="form-control">
+                                            <option value="">Unvan</option>
+                                            @foreach($unvanlar ?? '' as $unvan)
+                                                <option value="{{$unvan->id}}">{{$unvan->unvanAd}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="doktorTc" id="doktorTc" placeholder="doktor TC Kimlik No">                                </div>
-                                </div>
+                                    <input type="text" class="form-control" name="doktorTc" id="doktorTc" placeholder="Doktor TC Kimlik No">                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="tel" class="form-control" name="doktorTel" id="doktorTel" placeholder="Telefon">
@@ -34,23 +57,10 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="doktorAd" id="doktorAd" placeholder="doktor Adı">                                </div>
-                                </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="doktorSad" id="doktorSad" placeholder="doktor Soyadı">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
                                     <input type="text" class="form-control" name="email" id="email" placeholder="Email">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="doktorAdres" id="doktorAdres" placeholder="Adres">
                                 </div>

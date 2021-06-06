@@ -19,52 +19,46 @@
         <div class="container">
             <div class="row block-9">
                 <div class="col-md-12 pr-md-5">
-                    <form action="#">
+                    <form class="form-contact contact_form" method="POST" action="{{route('randevu.index')}}" id="contactForm" novalidate="novalidate">
+                        @csrf
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Hasta TC Kimlik No">
+                                    <input type="tel" class="form-control" name="hastaTC" placeholder="Hasta TC Kimlik No">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Hasta Adı">                                </div>
+                                    <input type="text" class="form-control" name="hastaAd" placeholder="Hasta Adı">
                                 </div>
+                            </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Hasta Soyadı">
+                                    <input type="text" class="form-control" name="hastaSad"placeholder="Hasta Soyadı">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control appointment_date" placeholder="Tarih">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control appointment_time" placeholder="Saat">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="select-wrap">
-                                        <select name="Doktor" id="" class="form-control">
-                                            <option value="">Doktor</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group" >
                                     <div class="select-wrap">
-                                        <select name="" id="" class="form-control">
+                                        <select name="poliklinikID" id="poliklinikID" class="form-control">
                                             <option value="">Poliklinik</option>
+                                            @foreach($poliklinikler ?? '' as $poliklinik)
+                                                <option value="{{$poliklinik->id}}">{{$poliklinik->poliklinikAd}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" class="form-control appointment_date" name="randevuTarihi" placeholder="Tarih">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" class="form-control appointment_time" name="saat" placeholder="Saat">
                                 </div>
                             </div>
                         </div>

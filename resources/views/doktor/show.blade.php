@@ -30,6 +30,7 @@
                                     </div>
                                     <div class="desc pl-sm-3 pl-md-5">
                                         <h3 class="heading">{{$doktor->doktorAd}} {{$doktor->doktorSad}}</h3>
+                                        <p>Unvan : {{$doktor->unvan->unvanAd}}</p>
                                         <p>TC Kimlik No : {{$doktor->doktorTc}}</p>
                                         <p>Telefon : {{$doktor->doktorTel}}</p>
                                         <p>Doğum Tarihi : {{$doktor->email}}</p>
@@ -53,7 +54,7 @@
                         <form method="GET" action="{{ route('doktor.search') }}" class="search-form">
                             <div class="form-group">
                                 <span class="icon fa fa-search"></span>
-                                <input type="text" name="search" class="form-control" placeholder="doktor Ara">
+                                <input type="text" name="search" class="form-control" placeholder="Doktor Ara">
                             </div>
                         </form>
                     </div>

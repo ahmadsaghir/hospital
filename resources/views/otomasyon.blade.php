@@ -22,7 +22,7 @@
                     <h2 class="mb-3">Otomasyon</h2>
                 </div>
             </div>
-            <div class="row">
+            <div class="row justify-content-center mb-5 pb-5">
                     <div class="col-md-3 ftco-animate">
                         <div class="pricing-entry pb-5 text-center">
                             <div>
@@ -53,6 +53,40 @@
                             <p><span class="price">Poliklinikler</span></p>
                         </div>
                         <p class="button text-center"><a href="/otomasyon/poliklinikler" class="btn btn-primary btn-outline-primary px-4 py-3">Görüntele</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-5 pb-5">
+                <div class="col-md-3 ftco-animate">
+                    <div class="pricing-entry pb-5 text-center">
+                        <div>
+                            <p><span class="price">Randevular</span></p>
+                        </div>
+                        <p class="button text-center"><a href="/otomasyon/randevular" class="btn btn-primary btn-outline-primary px-4 py-3">Görüntele</a></p>
+                    </div>
+                </div>
+                <div class="col-md-3 ftco-animate">
+                    <div class="pricing-entry pb-5 text-center">
+                        <div>
+                            <p><span class="price">Viziteler</span></p>
+                        </div>
+                        <p class="button text-center"><a href="/otomasyon/viziteler" class="btn btn-primary btn-outline-primary px-4 py-3">Görüntele</a></p>
+                    </div>
+                </div>
+                <div class="col-md-3 ftco-animate">
+                    <div class="pricing-entry pb-5 text-center">
+                        <div>
+                            <p><span class="price">Kurumlar</span></p>
+                        </div>
+                        <p class="button text-center"><a href="/otomasyon/kurumlar" class="btn btn-primary btn-outline-primary px-4 py-3">Görüntele</a></p>
+                    </div>
+                </div>
+                <div class="col-md-3 ftco-animate">
+                    <div class="pricing-entry pb-5 text-center">
+                        <div>
+                            <p><span class="price">Hasta Tipleri</span></p>
+                        </div>
+                        <p class="button text-center"><a href="/otomasyon/hastaTipleri" class="btn btn-primary btn-outline-primary px-4 py-3">Görüntele</a></p>
                     </div>
                 </div>
             </div>

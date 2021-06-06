@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Poliklinik;
 use App\Randevu;
 use Illuminate\Http\Request;
 
@@ -10,26 +11,33 @@ class RandevuController extends Controller
     public function index()
     {
         $randevular  = Randevu::all();
-        return view('randevu.index',['randevular'=>$randevular]);
+        return view('randevu.index',['randevular'=>$randevular])
+            ->with('poliklinikler',Poliklinik::all());
     }
     public function show(Randevu $randevu)
     {
-        $randevular = Randevu::all()->where('randevuID', '=', $randevu->id);
+//        $randevular = Randevu::all()->where('randevuID', '=', $randevu->id);
+        $randevular = Randevu::with(['poliklinik'=>function($q) {
+            $q->select('poliklinikAd','id');
+        }])->find($randevu);
 
+//      return response()->json($randevular);
         return view('randevu.show', ['randevu'=>$randevu]);
     }
     public function create()
     {
-        return view('randevu.create');
+        return view('randevu.create')
+            ->with('poliklinikler',Poliklinik::all());
     }
     public function store()
     {
         Randevu::create($this->validateRandevu());
-        return redirect('/Randevular');
+        return redirect('/otomasyon/randevular');
     }
     public function edit(Randevu $randevu)
     {
-        return view('randevu.edit',compact('randevu'));
+        return view('randevu.edit',compact('randevu'))
+            ->with('poliklinikler',Poliklinik::all());
     }
     public function update(Randevu $randevu)
     {
@@ -39,16 +47,27 @@ class RandevuController extends Controller
     public function destroy(Randevu $randevu)
     {
         $randevu->delete();
-        return redirect()->back();
+        return redirect('/otomasyon/randevular');
     }
     protected function validateRandevu()
     {
         return request()->validate([
-            'hastaID' => 'required',
-            'doktorID' => 'required',
+            'hastaTC' => 'required',
+            'hastaAd' => 'required',
+            'hastaSad' => 'required',
             'poliklinikID' => 'required',
             'randevuTarihi' => 'required',
+            'saat' => 'required'
 
         ]);
+    }
+    public function search(Request $request){
+
+        $search = $request->input('search');
+        $randevular = Randevu::query()
+            ->where('hastaAd', 'LIKE', "%{$search}%")
+            ->get();
+        return view('randevu.search', compact('randevular'),compact('search'))
+            ->with('query',\request('search'));
     }
 }

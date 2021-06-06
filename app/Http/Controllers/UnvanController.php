@@ -2,20 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Doktor;
 use App\Unvan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UnvanController extends Controller
 {
     public function index()
     {
-        $unvanlar  = Unvan::paginate(1);
+        $unvanlar  = Unvan::paginate(8);
         return view('unvan.index',['unvanlar'=>$unvanlar]);
     }
     public function show($unvan)
     {
-        $unvan = Unvan::find($unvan);
-        return view('unvan.show', ['unvan'=>$unvan]);
+        $doktorlar = Doktor::All()->where('unvanID','=',$unvan);
+
+//        return response()->json($doktorlar);
+        return view('unvan.show', ['doktorlar'=>$doktorlar]);
     }
     public function create()
     {
@@ -37,6 +41,8 @@ class UnvanController extends Controller
     }
     public function destroy(Unvan $unvan)
     {
+        $doktor = DB::table('doktors')->where('unvanID','=',$unvan->id);
+        $doktor->delete();
         $unvan->delete();
         return redirect('/otomasyon/unvanlar');
     }

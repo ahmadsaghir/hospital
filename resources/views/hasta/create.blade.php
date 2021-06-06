@@ -45,7 +45,33 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control appointment_date" name="dogumTarihi" id="dogumTarihi" placeholder="Tarih">
+                                    <div class="select-wrap">
+                                        <select name="kurumID" id="kurumID" class="form-control">
+                                            <option value="">Kurum</option>
+                                            @foreach($kurumlar ?? '' as $kurum)
+                                                <option value="{{$kurum->id}}">{{$kurum->kurumAd}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="select-wrap">
+                                        <select name="hastaTipiID" id="hastaTipiID" class="form-control">
+                                            <option value="">Hasta Tipi</option>
+                                            @foreach($hastaTipleri ?? '' as $hastaTipi)
+                                                <option value="{{$hastaTipi->id}}">{{$hastaTipi->hastaTipiAd}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control appointment_date" name="dogumTarihi" id="dogumTarihi" placeholder="Doğum Tarih">
                                 </div>
                             </div>
                             <div class="col-md-6">

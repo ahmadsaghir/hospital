@@ -12,4 +12,16 @@ class Hasta extends Model
     {
         return route('hasta.show', $this);
     }
+    public function vizite()
+    {
+        return $this->hasMany(Hasta::class,'hastaID');
+    }
+    public function kurum()
+    {
+        return $this->belongsTo(Kurum::class,'kurumID');
+    }
+    public function hastaTipi()
+    {
+        return $this->belongsTo(HastaTipi::class,'hastaTipiID');
+    }
 }

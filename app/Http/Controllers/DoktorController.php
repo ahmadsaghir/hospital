@@ -3,36 +3,42 @@
 namespace App\Http\Controllers;
 
 use App\Doktor;
+use App\Unvan;
 use Illuminate\Http\Request;
 
 class DoktorController extends Controller
 {
     public function index()
     {
-        $doktorlar  = Doktor::paginate(1);
-        return view('doktor.index',['doktorlar'=>$doktorlar]);
+        $doktorlar  = Doktor::paginate(8);
+        return view('doktor.index',['doktorlar'=>$doktorlar])
+            ->with('unvanlar',Unvan::all());
     }
     public function show($doktor)
     {
-        $doktor = Doktor::find($doktor);
+        $doktor = Doktor::with(['unvan'=>function($q) {
+            $q->select('unvanAd','id');
+        }])->find($doktor);
         return view('doktor.show', ['doktor'=>$doktor]);
     }
     public function create()
     {
-        return view('doktor.create');
+        return view('doktor.create')
+            ->with('unvanlar',Unvan::all());
     }
     public function store()
     {
-        Doktor::create($this->validatedoktor());
+        Doktor::create($this->validateDoktor());
         return redirect('/otomasyon/doktorlar');
     }
     public function edit(Doktor $doktor)
     {
-        return view('doktor.edit',compact('doktor'));
+        return view('doktor.edit',compact('doktor'))
+            ->with('unvanlar',Unvan::all());
     }
     public function update(Doktor $doktor)
     {
-        $doktor->update($this->validatedoktor());
+        $doktor->update($this->validateDoktor());
         return redirect($doktor->path());
     }
     public function destroy(Doktor $doktor)
@@ -40,7 +46,7 @@ class DoktorController extends Controller
         $doktor->delete();
         return redirect('/otomasyon/doktorlar');
     }
-    protected function validatedoktor()
+    protected function validateDoktor()
     {
         return request()->validate([
             'doktorTc' => 'required',
@@ -48,7 +54,9 @@ class DoktorController extends Controller
             'doktorAd' => 'required',
             'doktorSad' => 'required',
             'doktorAdres' => 'required',
-            'email' => 'required'
+            'email' => 'required',
+            'unvanID' => 'required'
+
 
         ]);
     }

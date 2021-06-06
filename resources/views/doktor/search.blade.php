@@ -22,6 +22,16 @@
                 <div class="col-md-7 text-center heading-section ftco-animate">
                     <h2 class="mb-3">doktorlar</h2>
                 </div>
+                <div class="offset-8 col-md-4 sidebar ftco-animate">
+                    <div class="sidebar-box indexsearch">
+                        <form method="GET" action="{{ route('doktor.search') }}" class="search-form">
+                            <div class="form-group">
+                                <span class="icon fa fa-search"></span>
+                                <input type="text" name="search" class="form-control" placeholder="Doktor Ara">
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
             <div class="row">
                 @if($doktorlar->isNotEmpty())
@@ -29,10 +39,11 @@
                     <div class="col-md-3 ftco-animate">
                         <div class="pricing-entry pb-5 text-center">
                             <div>
-                                <p><span class="price">{{$doktor->doktorID}}</span></p>
+                                <p><span class="price">{{$doktor->id}}</span></p>
                                 <h3 class="mb-4">{{$doktor->doktorAd}} {{$doktor->doktorSad}}</h3>
                             </div>
                             <ul>
+                                <li>{{$doktor->unvan->unvanAd}}</li>
                                 <li>{{$doktor->doktorTc}}</li>
                                 <li>{{$doktor->doktorTel}}</li>
                                 <li>{{$doktor->email}}</li>
@@ -43,10 +54,9 @@
                 @endforeach
                 @else
                     <div class="col-md-12 text-center heading-section ftco-animate">
-                        <h2 class="mb-3">doktor Bulunmadı</h2>
+                        <h2 class="mb-3">Doktor Bulunmadı</h2>
                     </div>
                 @endif
-
             </div>
         </div>
     </section>
