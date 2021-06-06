@@ -15,8 +15,8 @@ class CreateHastasTable extends Migration
     {
         Schema::create('hastas', function (Blueprint $table) {
             $table->bigIncrements("id");
-            $table->unsignedBigInteger('kurumID');
-            $table->unsignedBigInteger('hastaTipiID');
+            $table->unsignedBigInteger('kurumID')->nullable();
+            $table->unsignedBigInteger('hastaTipiID')->nullable();
             $table->bigInteger("hastaTC")->unique();
             $table->bigInteger("hastaTel");
             $table->string("hastaAd");

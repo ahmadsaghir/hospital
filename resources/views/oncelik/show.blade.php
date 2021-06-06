@@ -7,8 +7,8 @@
             <div class="container" data-scrollax-parent="true">
                 <div class="row slider-text align-items-end">
                     <div class="col-md-7 col-sm-12 ftco-animate mb-5">
-                        <p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span class="mr-2"><a href="/otomasyon/viziteler">Viziteler</a></span> <span>{{$vizite->viziteAd}}</span></p>
-                        <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">{{$vizite->viziteAd}}</h1>
+                        <p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span class="mr-2"><a href="/otomasyon/oncelikler">Öncelikler</a></span> <span>{{$oncelik->oncelikAd}}</span></p>
+                        <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">{{$oncelik->oncelikAd}}</h1>
                     </div>
                 </div>
             </div>
@@ -23,26 +23,18 @@
                             <div class="blog-entry">
                                 <div class="text d-flex py-4">
                                     <div class="meta mb-3">
-                                        <div><a>Sep. 20, 2018</a></div>
+                                        <div><a>{{ $oncelik->updated_at->format('M')}}. {{ $oncelik->updated_at->format('d')}}, {{ $oncelik->updated_at->format('Y')}}</a></div>
                                         <div><a href="#">Admin</a></div>
                                         <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                                     </div>
                                     <div class="desc pl-sm-3 pl-md-5">
-                                        <h3 class="heading">{{$vizite->viziteAd}}</h3>
-                                        <p>TC Kimlik No : {{$vizite->hasta->hastaTC}}</p>
-                                        <p>Hasta : {{$vizite->hasta->hastaAd}} {{$vizite->hasta->hastaSad}}</p>
-                                        <p>Doktor : {{$vizite->poliklinik->doktor->doktorAd}} {{$vizite->poliklinik->doktor->doktorSad}}</p>
-                                        <p>Poliklinik : {{$vizite->poliklinik->poliklinikAd}}</p>
-                                        <p>Öncelik : {{$vizite->oncelik->oncelikAd}}</p>
-                                        <p>Vizite Tarihi : {{$vizite->viziteTarihi}}</p>
-                                        <p>Vizite Başlama Zamanı : {{$vizite->baslamaZamani}}</p>
-                                        <p>Vizite Bitiş Zamanı : {{$vizite->bitisZamani}}</p>
+                                        <h3 class="heading">{{$oncelik->oncelikAd}}</h3>
                                         <div class="row">
                                             <div class="col-2">
-                                                <p><a href=/otomasyon/viziteler/{{$vizite->id}}/edit class="btn btn-primary btn-outline-primary">Düzenle</a></p>
+                                                <p><a href=/otomasyon/oncelikler/{{$oncelik->id}}/edit class="btn btn-primary btn-outline-primary">Düzenle</a></p>
                                             </div>
                                             <div class="col-2">
-                                                <p><a href="{{route('vizite.delete',$vizite->id)}}" class="btn btn-primary btn-outline-primary">Sil</a></p>
+                                                <p><a href="{{route('oncelik.delete',$oncelik->id)}}" class="btn btn-primary btn-outline-primary">Sil</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -53,10 +45,10 @@
                 </div> <!-- END: col-md-8 -->
                 <div class="col-md-4 sidebar ftco-animate">
                     <div class="sidebar-box">
-                        <form method="GET" action="{{route('vizite.search')}}" class="search-form">
+                        <form method="GET" action="{{ route('oncelik.search') }}" class="search-form">
                             <div class="form-group">
                                 <span class="icon fa fa-search"></span>
-                                <input type="text" name="search" class="form-control" placeholder="vizite Ara">
+                                <input type="text" name="search" class="form-control" placeholder="Öncelik Ara">
                             </div>
                         </form>
                     </div>

@@ -30,10 +30,10 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <div class="select-wrap">
-                                        <select name="doktorID" id="doktorID" class="form-control">
+                                        <select name="doktorID" class="form-control">
                                             <option value="">Doktor</option>
                                             @foreach($doktorlar ?? '' as $doktor)
-                                                <option value="{{$doktor->id}}">{{$doktor->doktorAd}}</option>
+                                                <option value="{{$doktor->id}}">{{$doktor->doktorAd}} {{$doktor->doktorSad}}</option>
                                             @endforeach
                                         </select>
                                     </div>

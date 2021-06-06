@@ -89,11 +89,21 @@ Route::get('/otomasyon/kurumlar/{kurum}/delete', 'KurumController@destroy')->nam
 Route::get('/kurumlar/search/', 'KurumController@search')->name('kurum.search');
 
 /*hastaTipleri*/
-Route::get('/otomasyon/hastaTipleri/create', 'hastaTipiController@create');
-Route::post('/otomasyon/hastaTipleri', 'hastaTipiController@store');
-Route::get('/otomasyon/hastaTipleri', 'hastaTipiController@index')->name('hastaTipi.index');
-Route::get('/otomasyon/hastaTipleri/{hastaTipi}', 'hastaTipiController@show')->name('hastaTipi.show');
-Route::get('/otomasyon/hastaTipleri/{hastaTipi}/edit', 'hastaTipiController@edit');
-Route::put('/otomasyon/hastaTipleri/{hastaTipi}', 'hastaTipiController@update');
-Route::get('/otomasyon/hastaTipleri/{hastaTipi}/delete', 'hastaTipiController@destroy')->name('hastaTipi.delete');
-Route::get('/hastaTipleri/search/', 'hastaTipiController@search')->name('hastaTipi.search');
+Route::get('/otomasyon/hastaTipleri/create', 'HastaTipiController@create');
+Route::post('/otomasyon/hastaTipleri', 'HastaTipiController@store');
+Route::get('/otomasyon/hastaTipleri', 'HastaTipiController@index')->name('hastaTipi.index');
+Route::get('/otomasyon/hastaTipleri/{hastaTipi}', 'HastaTipiController@show')->name('hastaTipi.show');
+Route::get('/otomasyon/hastaTipleri/{hastaTipi}/edit', 'HastaTipiController@edit');
+Route::put('/otomasyon/hastaTipleri/{hastaTipi}', 'HastaTipiController@update');
+Route::get('/otomasyon/hastaTipleri/{hastaTipi}/delete', 'HastaTipiController@destroy')->name('hastaTipi.delete');
+Route::get('/hastaTipleri/search/', 'HastaTipiController@search')->name('hastaTipi.search');
+
+/*oncelikler*/
+Route::get('/otomasyon/oncelikler/create', 'OncelikController@create');
+Route::post('/otomasyon/oncelikler', 'OncelikController@store');
+Route::get('/otomasyon/oncelikler', 'OncelikController@index')->name('oncelik.index');
+Route::get('/otomasyon/oncelikler/{oncelik}', 'OncelikController@show')->name('oncelik.show');
+Route::get('/otomasyon/oncelikler/{oncelik}/edit', 'OncelikController@edit');
+Route::put('/otomasyon/oncelikler/{oncelik}', 'OncelikController@update');
+Route::get('/otomasyon/oncelikler/{oncelik}/delete', 'OncelikController@destroy')->name('oncelik.delete');
+Route::get('/oncelikler/search/', 'OncelikController@search')->name('oncelik.search');

@@ -17,6 +17,7 @@ class CreateVizitesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('hastaID');
             $table->unsignedBigInteger('poliklinikID');
+            $table->unsignedBigInteger('oncelikID')->nullable();
             $table->string('viziteTarihi');
             $table->string('baslamaZamani');
             $table->string('bitisZamani');

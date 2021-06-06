@@ -34,7 +34,7 @@
                                         <select name="doktorID" id="doktorID" class="form-control">
                                             <option value="{{$poliklinik->doktor->id}}">{{$poliklinik->doktor->doktorAd}}</option>
                                             @foreach($doktorlar ?? '' as $doktor)
-                                                <option value="{{$doktor->id}}">{{$doktor->doktorAd}}</option>
+                                                <option value="{{$doktor->id}}">{{$doktor->doktorAd}} {{$doktor->doktorSad}}</option>
                                             @endforeach
                                         </select>
                                     </div>

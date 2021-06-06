@@ -46,6 +46,7 @@
                             <li>{{$vizite->hasta->hastaTC}}</li>
                             <li>{{$vizite->poliklinik->doktor->doktorAd}} {{$vizite->poliklinik->doktor->doktorSad}}</li>
                             <li>{{$vizite->poliklinik->poliklinikAd}}</li>
+                            <li>{{$vizite->oncelik->oncelikAd}}</li>
                             <li>{{$vizite->viziteTarihi}}</li>
                         </ul>
                         <p class="button text-center"><a href="/otomasyon/viziteler/{{$vizite->id}}" class="btn btn-primary btn-outline-primary px-4 py-3">Görüntele</a></p>

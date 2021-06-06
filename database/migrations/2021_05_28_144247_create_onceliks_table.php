@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKurumsTable extends Migration
+class CreateOnceliksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateKurumsTable extends Migration
      */
     public function up()
     {
-        Schema::create('kurums', function (Blueprint $table) {
+        Schema::create('onceliks', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('kurumAd');
-            $table->string('aktif')->nullable();
+            $table->string('oncelikAd');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateKurumsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kurums');
+        Schema::dropIfExists('onceliks');
     }
 }

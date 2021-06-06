@@ -77,10 +77,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="select-wrap">
-                                        <select name="dogumYeri" id="dogumYeri" class="form-control">
-                                            <option value="">Doğum Yeri</option>
-                                            <option value="Halep">Halep</option>
-                                        </select>
+                                        <input type="text" class="form-control" name="dogumYeri" placeholder="Doğum Yeri">
                                     </div>
                                 </div>
                             </div>

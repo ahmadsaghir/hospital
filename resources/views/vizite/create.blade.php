@@ -21,25 +21,37 @@
                     <form class="form-contact contact_form" method="POST" action="{{route('vizite.index')}}" id="contactForm" novalidate="novalidate">
                         @csrf
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group" >
                                     <div class="select-wrap">
-                                        <select name="hastaID" id="hastaID" class="form-control">
+                                        <select name="hastaID" class="form-control">
                                             <option value="">Hasta</option>
                                             @foreach($hastalar ?? '' as $hasta)
-                                                <option value="{{$hasta->id}}">{{$hasta->hastaAd}}</option>
+                                                <option value="{{$hasta->id}}">{{$hasta->hastaAd}} {{$hasta->hastaSad}} </option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group" >
                                     <div class="select-wrap">
-                                        <select name="poliklinikID" id="poliklinikID" class="form-control">
+                                        <select name="poliklinikID" class="form-control">
                                             <option value="">Poliklinik</option>
                                             @foreach($poliklinikler ?? '' as $poliklinik)
                                                 <option value="{{$poliklinik->id}}">{{$poliklinik->poliklinikAd}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group" >
+                                    <div class="select-wrap">
+                                        <select name="oncelikID" class="form-control">
+                                            <option value="">Öncelikler</option>
+                                            @foreach($oncelikler ?? '' as $oncelik)
+                                                <option value="{{$oncelik->id}}">{{$oncelik->oncelikAd}}</option>
                                             @endforeach
                                         </select>
                                     </div>

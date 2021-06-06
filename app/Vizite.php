@@ -20,4 +20,8 @@ class Vizite extends Model
     {
         return $this->belongsTo(Hasta::class,'hastaID');
     }
+    public function oncelik()
+    {
+        return $this->belongsTo(Oncelik::class,'oncelikID');
+    }
 }

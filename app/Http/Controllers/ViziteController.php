@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Hasta;
+use App\Oncelik;
 use App\Poliklinik;
 use App\Vizite;
 use Illuminate\Http\Request;
@@ -14,7 +15,8 @@ class ViziteController extends Controller
         $viziteler  = Vizite::all();
         return view('vizite.index',['viziteler'=>$viziteler])
             ->with('hastalar',Hasta::all())
-            ->with('poliklinikler',Poliklinik::all());
+            ->with('poliklinikler',Poliklinik::all())
+            ->with('oncelikler',Oncelik::all());
     }
     public function show(Vizite $vizite)
     {
@@ -30,7 +32,8 @@ class ViziteController extends Controller
     {
         return view('vizite.create')
             ->with('hastalar',Hasta::all())
-            ->with('poliklinikler',Poliklinik::all());
+            ->with('poliklinikler',Poliklinik::all())
+            ->with('oncelikler',Oncelik::all());
     }
     public function store()
     {
@@ -41,7 +44,8 @@ class ViziteController extends Controller
     {
         return view('vizite.edit',compact('vizite'))
             ->with('hastalar',Hasta::all())
-            ->with('poliklinikler',Poliklinik::all());
+            ->with('poliklinikler',Poliklinik::all())
+            ->with('oncelikler',Oncelik::all());
     }
     public function update(Vizite $vizite)
     {
@@ -58,6 +62,7 @@ class ViziteController extends Controller
         return request()->validate([
             'hastaID' => 'required',
             'poliklinikID' => 'required',
+            'oncelikID' => 'required',
             'viziteTarihi' => 'required',
             'baslamaZamani' => 'required',
             'bitisZamani' => 'required'
